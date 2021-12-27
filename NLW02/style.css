@@ -36,6 +36,7 @@ img {
 
   /*Cores*/
   --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
 }
 
 /* Base ------------------------------------------------------------------------------*/
@@ -107,6 +108,10 @@ body {
 
 .section .title {
   margin-bottom: 1rem;
+}
+
+.section .subtitle{
+  font-size: var(subtitle-font-size);
 }
 
 .section header {
@@ -535,6 +540,7 @@ footer .social a:hover {
 @media(min-width: 992px){
   :root{
     --title-font-size: 2.2rem;
+    --subtitle-font-size: 1.125rem;
   }
 
 }
