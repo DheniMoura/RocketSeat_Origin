@@ -37,6 +37,9 @@ img {
   /*Cores*/
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
 }
 
 /* Base ------------------------------------------------------------------------------*/
@@ -45,14 +48,14 @@ html {
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 1rem var(--body-font);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
 .title {
-  font: 700 var(--title-font-size) 'Poppins', sans-serif;
+  font: 700 var(--title-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -65,7 +68,7 @@ body {
   align-items: center;
   padding: 0 2rem;
   border-radius: 0.25rem;
-  font: 500 1rem 'DM Sans', sans-serif;
+  font: 500 1rem var(--body-font);
   transition: background 0.3s;
 }
 
@@ -103,14 +106,14 @@ body {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: calc(5rem + var(--header_height)) 0;
 }
 
 .section .title {
   margin-bottom: 1rem;
 }
 
-.section .subtitle{
+.section .subtitle {
   font-size: var(subtitle-font-size);
 }
 
@@ -139,13 +142,9 @@ body {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
 }
 
-main {
-  margin-top: calc(var(--header_height) + 2rem);
-}
-
 /* Logo ---------------------------------------------*/
 .logo {
-  font: 700 1.31rem 'Poppins', sans-serif;
+  font: 700 1.31rem var(--title-font);
   color: var(--title-color);
 }
 
@@ -478,9 +477,18 @@ footer {
   background: var(--base-color);
 }
 
+footer.section {
+  padding: 4rem 0;
+}
+
 footer .logo {
   display: inline-block;
   margin-bottom: 1.5rem;
+}
+
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
 }
 
 footer .brand p {
@@ -494,7 +502,7 @@ footer i {
 }
 
 footer .social a {
-  margin-right: 2rem;
+  /*margin-right: 2rem;*/
   transition: 0.3s;
   display: inline-block;
 }
@@ -532,15 +540,37 @@ footer .social a:hover {
 
 /* Responsivo ------------------------------------------------------------------------*/
 /* Pontos de quebra - desfio para resolver
--extra large devices: > 1200 
--large devices; > 1023 
+-extra large devices: > 1200*/
+@media (min-width: 1200px) {
+  .section {
+    padding: 10rem 0;
+  }
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--body-font);
+  }
+
+  nav .menu ul li a main {
+    margin-top: var(--header_height);
+  }
+}
+/*-large devices; > 1023 
 -medium devices: > 767 (tablets) */
 
 /* large devices: > 992 */
-@media(min-width: 992px){
-  :root{
+@media (min-width: 992px) {
+  :root {
     --title-font-size: 2.2rem;
     --subtitle-font-size: 1.125rem;
   }
-
 }
