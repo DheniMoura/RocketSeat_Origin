@@ -542,9 +542,28 @@ footer .social a:hover {
 /* Pontos de quebra - desfio para resolver
 -extra large devices: > 1200*/
 @media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .section {
     padding: 10rem 0;
   }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    height: 3.125rem;
+  }
+
+  /*navigation*/
   nav .menu {
     opacity: 1;
     visibility: visible;
@@ -560,8 +579,51 @@ footer .social a:hover {
     font: 400 1rem var(--body-font);
   }
 
-  nav .menu ul li a main {
+  nav .icon-menu {
+    display: none;
+  }
+
+  /*layout*/
+  main {
     margin-top: var(--header_height);
+  }
+
+  /*Home*/
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /*about*/
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /*testimonials*/
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /*services*/
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 /*-large devices; > 1023 
